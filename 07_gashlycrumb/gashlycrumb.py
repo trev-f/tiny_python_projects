@@ -37,12 +37,16 @@ def main():
     """Make a jazz noise here"""
 
     args = get_args()
-    file_arg = args.file
-    pos_arg = args.positional
 
-    print('file_arg = "{}"'.format(file_arg.name if file_arg else ''))
-    print(f'positional = "{pos_arg}"')
+    for letter in args.letter:
+        print(letter.upper())
 
+    gashlycrumb = {}
+    for line in args.file:
+        gashlycrumb.update({line[0].upper(): line.rstrip()})
+
+    print(gashlycrumb)
+        
 
 # --------------------------------------------------
 if __name__ == '__main__':
