@@ -38,14 +38,13 @@ def main():
 
     args = get_args()
 
-    for letter in args.letter:
-        print(letter.upper())
-
     gashlycrumb = {}
     for line in args.file:
         gashlycrumb.update({line[0].upper(): line.rstrip()})
 
-    print(gashlycrumb)
+    for letter in args.letter:
+        if letter.upper() in gashlycrumb:
+            print(gashlycrumb.get(letter.upper()))
         
 
 # --------------------------------------------------
