@@ -37,6 +37,16 @@ def main():
     """Make a jazz noise here"""
 
     args = get_args()
+    vowels = 'aeiou'
+
+    out_text = ''
+    for letter in args.text:
+        if letter in vowels:
+            out_text += letter.replace(letter, args.vowel)
+        else:
+            out_text += letter
+
+    print(out_text)
 
 
 # --------------------------------------------------
