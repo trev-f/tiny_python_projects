@@ -45,6 +45,8 @@ def main():
     for letter in args.letter:
         if letter.upper() in gashlycrumb:
             print(gashlycrumb.get(letter.upper()))
+        else:
+            print(f'I do not know "{letter.upper()}".')
         
 
 # --------------------------------------------------
