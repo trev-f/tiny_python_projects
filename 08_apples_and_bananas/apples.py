@@ -41,8 +41,11 @@ def main():
 
     out_text = ''
     for letter in args.text:
-        if letter in vowels:
-            out_text += letter.replace(letter, args.vowel)
+        if letter.lower() in vowels:
+            if letter.islower():
+                out_text += letter.replace(letter, args.vowel)
+            else:
+                out_text += letter.replace(letter, args.vowel.upper())
         else:
             out_text += letter
 
