@@ -6,6 +6,7 @@ Purpose: Apples and bananas
 """
 
 import argparse
+import os
 
 
 # --------------------------------------------------
@@ -28,8 +29,12 @@ def get_args():
                         choices=['a', 'e', 'i', 'o', 'u'],
                         default='a')
 
+    args = parser.parse_args()
 
-    return parser.parse_args()
+    if os.path.isfile(args.text):
+        args.text = open(args.text).read().rstrip()
+
+    return args
 
 
 # --------------------------------------------------
