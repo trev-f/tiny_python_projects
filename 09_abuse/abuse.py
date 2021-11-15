@@ -6,6 +6,7 @@ Purpose: Heap abuse
 """
 
 import argparse
+import random
 
 
 # --------------------------------------------------
@@ -52,6 +53,7 @@ def main():
     """Make a jazz noise here"""
 
     args = get_args()
+    random.seed(args.seed)
 
     # set lists of adjectives and nouns for insults
     adjs = """
@@ -62,7 +64,6 @@ def main():
            rotten ruinous scurilous scurvy slanderous sodden-witted 
            thin-faced toad-spotted unmannered vile wall-eyed
            """.split()
-
     nouns = """
             Judas Satan ape ass barbermonger beggar block boy
             braggart butt carbuncle coward coxcomb cur dandy 
@@ -70,6 +71,9 @@ def main():
             knave liar lunatic maw milksop minion ratcatcher recreant 
             rogue scold slave swine traitor varlet villain worm
             """.split()
+
+    adjectives = random.sample(adjs, args.adjectives)
+    print(f"You {', '.join(adjectives)} {random.choice(nouns)}!")
 
 
 # --------------------------------------------------
