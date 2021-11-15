@@ -145,7 +145,9 @@ def get_args():
                         help='A boolean flag',
                         action='store_true')
 
-    return parser.parse_args()
+    args = parser.parse_args()
+
+    return args
 
 
 # --------------------------------------------------
