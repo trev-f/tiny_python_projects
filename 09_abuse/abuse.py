@@ -68,9 +68,6 @@ def main():
                rogue scold slave swine traitor varlet villain worm
             """.split()
 
-    print(adjs)
-    print(nouns)
-
 
 # --------------------------------------------------
 if __name__ == '__main__':
