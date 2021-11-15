@@ -36,6 +36,9 @@ def get_args():
 
     args = parser.parse_args()
 
+    if not 0 <= args.mutations <= 1:
+        parser.error(f'--mutations "{args.mutations}" must be between 0 and 1')
+
     return args
 
 
