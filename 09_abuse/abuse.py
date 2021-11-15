@@ -72,8 +72,9 @@ def main():
             rogue scold slave swine traitor varlet villain worm
             """.split()
 
-    adjectives = random.sample(adjs, args.adjectives)
-    print(f"You {', '.join(adjectives)} {random.choice(nouns)}!")
+    for n in range(args.number):
+        adjectives = random.sample(adjs, args.adjectives)
+        print(f"You {', '.join(adjectives)} {random.choice(nouns)}!")
 
 
 # --------------------------------------------------
