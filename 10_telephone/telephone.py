@@ -48,6 +48,9 @@ def main():
 
     args = get_args()
 
+    print(f'You said: "{args.text}"')
+    print(f'I heard : "{args.text}"')
+
 
 # --------------------------------------------------
 if __name__ == '__main__':
