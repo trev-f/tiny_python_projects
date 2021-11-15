@@ -152,7 +152,7 @@ def get_args():
 
 # --------------------------------------------------
 def main():
-    \"\"\"Make a jazz noise here\"\"\"
+    \"\"\"main program\"\"\"
 
     args = get_args()
     str_arg = args.arg
