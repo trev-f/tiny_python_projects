@@ -6,6 +6,7 @@ Purpose: Telephone
 """
 
 import argparse
+import random
 import string
 
 
@@ -49,10 +50,25 @@ def main():
 
     args = get_args()
 
-    alpha = string.ascii_letters + string.punctuation
+    # set number mutations
+    n_mutations = round(len(args.text) * args.mutations)
 
+    # define mutation space
+    alpha = ''.join(sorted(string.ascii_letters + string.punctuation))
+
+    # randomly sample characters to change
+    random.seed(args.seed)
+    indexes = random.sample(range(len(args.text)), n_mutations)
+
+    mut_text = args.text
+    for i in indexes:
+        mut_char = random.choice(alpha.replace(mut_text[i], ''))
+
+        mut_text = mut_text[:i] + mut_char + mut_text[i+1:]
+
+    # print what was said and what was heard
     print(f'You said: "{args.text}"')
-    print(f'I heard : "{args.text}"')
+    print(f'I heard : "{mut_text}"')
 
 
 # --------------------------------------------------
