@@ -6,6 +6,7 @@ Purpose: Telephone
 """
 
 import argparse
+import string
 
 
 # --------------------------------------------------
@@ -47,6 +48,8 @@ def main():
     """main program"""
 
     args = get_args()
+
+    alpha = string.ascii_letters + string.punctuation
 
     print(f'You said: "{args.text}"')
     print(f'I heard : "{args.text}"')
