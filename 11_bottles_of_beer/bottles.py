@@ -37,6 +37,12 @@ def main():
 
     args = get_args()
 
+    verse = ('1 bottle of beer on the wall,\n'
+             '1 bottle of beer,\n'
+             'Take one down, pass it around,\n'
+             'No more bottles of beer on the wall!')
+
+    print(verse)
 
 # --------------------------------------------------
 if __name__ == '__main__':
