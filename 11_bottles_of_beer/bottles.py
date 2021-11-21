@@ -37,10 +37,10 @@ def main():
 
     args = get_args()
 
-    verse = ('1 bottle of beer on the wall,\n'
-             '1 bottle of beer,\n'
-             'Take one down, pass it around,\n'
-             'No more bottles of beer on the wall!')
+    verse = '\n'.join(['1 bottle of beer on the wall,',
+             '1 bottle of beer,',
+             'Take one down, pass it around,',
+             'No more bottles of beer on the wall!'])
 
     print(verse)
 
