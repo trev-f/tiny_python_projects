@@ -37,9 +37,11 @@ def main():
 
     args = get_args()
 
-    for num in range(args.number, 0, -1):
-        ver = verse(num) + '\n' if num > 1 else verse(num)
-        print(ver)
+    print('\n\n'.join(map(verse, range(args.number, 0, -1))))
+
+    #for num in range(args.number, 0, -1):
+    #    ver = verse(num) + '\n' if num > 1 else verse(num)
+    #   print(ver)
 
 
 # --------------------------------------------------
