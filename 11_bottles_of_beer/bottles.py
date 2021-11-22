@@ -38,36 +38,27 @@ def main():
     args = get_args()
 
     for num in range(args.number, 0, -1):
-        print(verse(num))
+        ver = verse(num) + '\n' if num > 1 else verse(num)
+        print(ver)
 
 
+# --------------------------------------------------
 def verse(bottle):
     """Sing a verse"""
 
-    if bottle > 2:
-        verse = '\n'.join([f'{bottle} bottles of beer on the wall,',
-            f'{bottle} bottles of beer,',
-            'Take one down, pass it around,',
-            f'{bottle - 1} bottles of beer on the wall!\n'
-        ])
-    elif bottle == 2:
-        verse = '\n'.join([f'{bottle} bottles of beer on the wall,',
-            f'{bottle} bottles of beer,',
-            'Take one down, pass it around,',
-            f'{bottle - 1} bottle of beer on the wall!\n'
-        ])
-    elif bottle == 1:
-        verse = '\n'.join(['1 bottle of beer on the wall,',
-            '1 bottle of beer,',
-            'Take one down, pass it around,',
-            'No more bottles of beer on the wall!'
-        ])
-    else:
-        pass
+    bot1 = 'bottles' if bottle > 1 else 'bottle'
+    bot2 = 'bottles' if bottle - 1 != 1 else 'bottle'
+    next_bottle = bottle - 1 if bottle != 1 else 'No more'
 
-    return verse
+    return '\n'.join([
+            f'{bottle} {bot1} of beer on the wall,',
+            f'{bottle} {bot1} of beer,',
+            'Take one down, pass it around,',
+            f'{next_bottle} {bot2} of beer on the wall!'
+        ])
 
 
+# --------------------------------------------------
 def test_verse():
     """Test verse"""
 
