@@ -6,6 +6,7 @@ Purpose: Ransom Note
 """
 
 import argparse
+import random
 
 
 # --------------------------------------------------
@@ -37,6 +38,8 @@ def main():
     """main program"""
 
     args = get_args()
+    random.seed(args.seed)
+    print(args.text)
 
 
 # --------------------------------------------------
